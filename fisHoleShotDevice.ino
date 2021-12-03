@@ -37,16 +37,16 @@ void loop()
 {
     // Read Input: Speed
     //g_fisInput[0] = analogRead(0);
-    g_fisInput[0] = 360;
+    g_fisInput[0] = 0;
     // Read Input: LeanAngle
     //g_fisInput[1] = analogRead(1);
-    g_fisInput[1] = 60;
+    g_fisInput[1] = 0;
     // Read Input: WeightDecrease
     //g_fisInput[2] = analogRead(2);
-    g_fisInput[2] = 25;
+    g_fisInput[2] = 45;
     // Read Input: TyreWear
     //g_fisInput[3] = analogRead(3);
-    g_fisInput[3] = 25;
+    g_fisInput[3] = 45;
 
     g_fisOutput[0] = 0;
 
@@ -139,10 +139,10 @@ FIS_TYPE fis_gMFI1Coeff2[] = { 20, 30, 40 };
 FIS_TYPE fis_gMFI1Coeff3[] = { 35, 60, 85 };
 FIS_TYPE* fis_gMFI1Coeff[] = { fis_gMFI1Coeff1, fis_gMFI1Coeff2, fis_gMFI1Coeff3 };
 FIS_TYPE fis_gMFI2Coeff1[] = { 0, 50, 75 };
-FIS_TYPE fis_gMFI2Coeff2[] = { 25, 95, 100 };
+FIS_TYPE fis_gMFI2Coeff2[] = { 45, 95, 100 };
 FIS_TYPE* fis_gMFI2Coeff[] = { fis_gMFI2Coeff1, fis_gMFI2Coeff2 };
 FIS_TYPE fis_gMFI3Coeff1[] = { 0, 50, 100 };
-FIS_TYPE fis_gMFI3Coeff2[] = { 25, 90, 100 };
+FIS_TYPE fis_gMFI3Coeff2[] = { 45, 90, 100 };
 FIS_TYPE* fis_gMFI3Coeff[] = { fis_gMFI3Coeff1, fis_gMFI3Coeff2 };
 FIS_TYPE** fis_gMFICoeff[] = { fis_gMFI0Coeff, fis_gMFI1Coeff, fis_gMFI2Coeff, fis_gMFI3Coeff };
 
