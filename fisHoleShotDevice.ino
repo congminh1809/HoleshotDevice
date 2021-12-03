@@ -1,11 +1,3 @@
-//***********************************************************************
-// Matlab .fis to arduino C converter v2.0.1.25122016                   
-// - Karthik Nadig, USA                                                  
-// Please report bugs to:                                                
-// https://github.com/karthiknadig/ArduinoFIS/issues                     
-// If you don't have a GitHub account mail to karthiknadig@gmail.com     
-//***********************************************************************
-
 #include "fis_header.h"
 
 // Number of inputs to the fuzzy inference system
@@ -13,7 +5,7 @@ const int fis_gcI = 4;
 // Number of outputs to the fuzzy inference system
 const int fis_gcO = 1;
 // Number of rules to the fuzzy inference system
-const int fis_gcR = 6;
+const int fis_gcR = 10;
 
 FIS_TYPE g_fisInput[fis_gcI];
 FIS_TYPE g_fisOutput[fis_gcO];
@@ -21,6 +13,7 @@ FIS_TYPE g_fisOutput[fis_gcO];
 // Setup routine runs once when you press reset:
 void setup()
 {
+
     // initialize the Analog pins for input.
     // Pin mode for Input: Speed
     pinMode(0 , INPUT);
@@ -44,16 +37,16 @@ void loop()
 {
     // Read Input: Speed
     //g_fisInput[0] = analogRead(0);
-    g_fisInput[0] = 50;
+    g_fisInput[0] = 360;
     // Read Input: LeanAngle
     //g_fisInput[1] = analogRead(1);
     g_fisInput[1] = 60;
     // Read Input: WeightDecrease
     //g_fisInput[2] = analogRead(2);
-    g_fisInput[2] = 95;
+    g_fisInput[2] = 25;
     // Read Input: TyreWear
     //g_fisInput[3] = analogRead(3);
-    g_fisInput[3] = 95;
+    g_fisInput[3] = 25;
 
     g_fisOutput[0] = 0;
 
@@ -64,6 +57,8 @@ void loop()
     Serial.print("Supppension Height: ");
     Serial.print(g_fisOutput[0]);
     Serial.println("%");
+    delay(100000);
+
 
 }
 
@@ -172,10 +167,10 @@ int fis_gMFO0[] = { 1, 1, 1, 1, 1 };
 int* fis_gMFO[] = { fis_gMFO0};
 
 // Rule Weights
-FIS_TYPE fis_gRWeight[] = { 1, 1, 1, 1, 1, 1 };
+FIS_TYPE fis_gRWeight[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 
 // Rule Type
-int fis_gRType[] = { 1, 1, 1, 1, 1, 1 };
+int fis_gRType[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 
 // Rule Inputs
 int fis_gRI0[] = { 1, 3, 1, 1 };
@@ -184,7 +179,11 @@ int fis_gRI2[] = { 1, 3, 2, 2 };
 int fis_gRI3[] = { 3, 1, 2, 2 };
 int fis_gRI4[] = { 2, 2, 1, 1 };
 int fis_gRI5[] = { 2, 2, 2, 2 };
-int* fis_gRI[] = { fis_gRI0, fis_gRI1, fis_gRI2, fis_gRI3, fis_gRI4, fis_gRI5 };
+int fis_gRI6[] = { 1, 1, 1, 1 };
+int fis_gRI7[] = { 1, 1, 2, 2 };
+int fis_gRI8[] = { 3, 3, 1, 1 };
+int fis_gRI9[] = { 3, 3, 2, 2 };
+int* fis_gRI[] = { fis_gRI0, fis_gRI1, fis_gRI2, fis_gRI3, fis_gRI4, fis_gRI5, fis_gRI6, fis_gRI7, fis_gRI8, fis_gRI9 };
 
 // Rule Outputs
 int fis_gRO0[] = { 1 };
@@ -193,7 +192,11 @@ int fis_gRO2[] = { 2 };
 int fis_gRO3[] = { 4 };
 int fis_gRO4[] = { 3 };
 int fis_gRO5[] = { 3 };
-int* fis_gRO[] = { fis_gRO0, fis_gRO1, fis_gRO2, fis_gRO3, fis_gRO4, fis_gRO5 };
+int fis_gRO6[] = { 1 };
+int fis_gRO7[] = { 1 };
+int fis_gRO8[] = { -1 };
+int fis_gRO9[] = { 3 };
+int* fis_gRO[] = { fis_gRO0, fis_gRO1, fis_gRO2, fis_gRO3, fis_gRO4, fis_gRO5, fis_gRO6, fis_gRO7, fis_gRO8, fis_gRO9 };
 
 // Input range Min
 FIS_TYPE fis_gIMin[] = { 50, 0, 0, 0 };
