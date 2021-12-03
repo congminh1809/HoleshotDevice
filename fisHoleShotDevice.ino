@@ -26,7 +26,7 @@ void setup()
 
 
     // initialize the Analog pins for output.
-    // Pin mode for Output: SuppensionHeight
+    // Pin mode for Output: SuspensionHeight
     pinMode(4 , OUTPUT);
     Serial.begin(9600);
 
@@ -52,9 +52,9 @@ void loop()
 
     fis_evaluate();
 
-    // Set output vlaue: SuppensionHeight
+    // Set output vlaue: SuspensionHeight
     //analogWrite(4 , g_fisOutput[0]);
-    Serial.print("Supppension Height: ");
+    Serial.print("Suspension Height: ");
     Serial.print(g_fisOutput[0]);
     Serial.println("%");
     delay(100000);
